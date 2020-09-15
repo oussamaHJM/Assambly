@@ -1,0 +1,21 @@
+  ADDR B1 B2 B3 B4 D:\oussama\compter les cases de mmoire identique PAGE       1
+
+                           org $c000
+  C000 7F 50 00            clr $5000
+  C003 CE 30 00            ldx #$3000
+  C006 18 CE 40 00         ldy #$4000
+  C00A A6 00       et1     ldaa ,x
+  C00C 18 A1 00            cmpa ,y
+  C00F 26 03               bne et
+  C011 7C 50 00            inc $5000
+  C014 08          et      inx
+  C015 18 08               iny
+  C017 8C 30 14            cpx #$3014
+  C01A 26 EE               bne et1
+  C01C 3F                  swi
+                           end
+
+  Symbol Table 
+
+  ET                 C014
+  ET1                C00A

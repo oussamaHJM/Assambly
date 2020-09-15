@@ -1,0 +1,25 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                           org $c000
+  C000 7F 30 01            clr $3001
+  C003 7F 30 02            clr $3002
+  C006 7F 30 03            clr $3003
+  C009 B6 30 00            ldaa $3000
+  C00C 27 07               beq et
+  C00E B6 30 00            ldaa $3000
+  C011 2A 07               bpl et1
+  C013 20 0A               bra et2
+  C015 7C 30 03    et      inc $3003
+  C018 20 08               bra fin
+  C01A 7C 30 01    et1     inc $3001
+  C01D 20 03               bra fin
+  C01F 7C 30 02    et2     inc $3002
+  C022 3F          fin     swi
+                           end
+
+  Symbol Table 
+
+  ET                 C015
+  FIN                C022
+  ET1                C01A
+  ET2                C01F

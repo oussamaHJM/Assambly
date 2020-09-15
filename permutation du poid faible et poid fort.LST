@@ -1,0 +1,20 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                           org $c000
+  C000 B6 04 00            ldaa $0400
+  C003 F6 04 00            ldab $0400
+  C006 84 0F               anda #$0f
+  C008 48                  lsla
+  C009 48                  lsla
+  C00A 48                  lsla
+  C00B 48                  lsla
+  C00C C4 F0               andb #$f0
+  C00E 54                  lsrb
+  C00F 54                  lsrb
+  C010 54                  lsrb
+  C011 54                  lsrb
+  C012 F7 04 01            stab $0401
+  C015 BA 04 01            oraa $0401
+  C018 B7 04 00            staa $0400
+  C01B 3F                  swi
+                           end

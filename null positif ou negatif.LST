@@ -1,0 +1,28 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                           org $c000
+  C000 7F 2F FF            clr $2fff
+  C003 7F 2F FE            clr $2ffe
+  C006 7F 2F FD            clr $2ffd
+  C009 CE 30 00            ldx #$3000
+  C00C A6 00       et      ldaa ,x
+  C00E 27 0C               beq null
+
+  C010 2B 05               bmi neg
+  C012 7C 2F FE            inc $2ffe
+  C015 20 08               bra xx
+  C017 7C 2F FD    neg     inc $2ffd
+  C01A 20 03               bra xx
+  C01C 7C 2F FF    null    inc $2fff
+  C01F 08          xx      inx
+  C020 8C 30 14            cpx #$3014
+  C023 26 E7               bne et
+  C025 3F                  swi
+                           end
+
+  Symbol Table 
+
+  NEG                C017
+  ET                 C00C
+  XX                 C01F
+  NULL               C01C

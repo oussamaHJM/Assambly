@@ -1,0 +1,10 @@
+  ADDR B1 B2 B3 B4 D:\oussama\complément à1 et à2.asm               PAGE       1
+
+                           org $c000
+  C000 B6 01 40            ldaa $0140
+  C003 B7 01 41            staa $0141
+  C006 B7 01 42            staa $0142
+  C009 73 01 41            com $0141
+  C00C 70 01 42            neg $0142
+  C00F 3F                  swi
+                           end

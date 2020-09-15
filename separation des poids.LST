@@ -1,0 +1,15 @@
+  ADDR B1 B2 B3 B4 D:\oussama\separation des poids.asm              PAGE       1
+
+                           org $c000
+  C000 B6 04 00            ldaa $0400
+  C003 84 0F               anda #$0f
+  C005 B7 04 01            staa $0401
+  C008 B6 04 00            ldaa $0400
+  C00B 84 F0               anda #$f0
+  C00D 44                  lsra
+  C00E 44                  lsra
+  C00F 44                  lsra
+  C010 44                  lsra
+  C011 B7 04 02            staa $0402
+  C014 3F                  swi
+                           end

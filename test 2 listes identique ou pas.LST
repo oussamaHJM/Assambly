@@ -1,0 +1,21 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                           org $c000
+  C000 7F 50 00            clr $5000
+  C003 CE 20 00            ldx #$2000
+  C006 18 CE 30 00         ldy #$3000
+  C00A A6 00       et1     ldaa ,x
+  C00C 18 A1 00            cmpa ,y
+  C00F 26 0B               bne et
+  C011 08                  inx
+  C012 18 08               iny
+  C014 8C 20 0A            cpx #$200a
+  C017 26 F1               bne et1
+  C019 7C 50 00            inc $5000
+  C01C 3F          et      swi
+                           end
+
+  Symbol Table 
+
+  ET                 C01C
+  ET1                C00A

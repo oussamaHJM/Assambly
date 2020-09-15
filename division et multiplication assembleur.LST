@@ -1,0 +1,14 @@
+  ADDR B1 B2 B3 B4 D:\oussama\division et multiplication            PAGE       1
+
+                           org $c000
+  C000 B6 30 00            ldaa $3000
+  C003 F6 30 01            ldab $3001
+  C006 3D                  mul a*b
+  C007 FD 30 01            std $3001
+  C00A FC 30 00            ldd $3000
+  C00D FE 40 02            ldx $4002
+  C010 02                  idiv
+  C011 FD 40 06            std $4006
+  C014 FF 40 04            stx $4004
+  C017 3F                  swi
+                           end

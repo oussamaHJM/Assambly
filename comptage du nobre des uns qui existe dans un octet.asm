@@ -1,0 +1,32 @@
+	org $c000
+	ldaa $0700
+	clr $0701
+	lsla
+	bcc et
+	inc $0701
+et	lsla
+	bcc et1
+	inc $0701
+et1	lsla
+	bcc et2
+	inc $0701
+et2	lsla
+	bcc et3
+	inc $0701
+et3	lsla
+	bcc et4
+	inc $0701
+et4	lsla
+	bcc et5
+	inc $0701
+et5	lsla
+	bcc et6
+	inc $0701
+et6	lsla
+	bcc et7
+	inc $0701
+et7	lsla
+	bcc et8
+	inc $0701
+et8	swi
+	end

@@ -1,0 +1,18 @@
+  ADDR B1 B2 B3 B4 D:\programation assembleur\duplication.asm       PAGE       1
+
+                           org $c000
+  C000 C6 14               ldab #$14
+  C002 CE 05 00            ldx #$0500
+  C005 18 CE 05 0A         ldy #$050a
+  C009 A6 00       et      ldaa ,x
+  C00B 18 A7 00            staa ,y
+  C00E 08                  inx
+  C00F 18 08               iny
+  C011 5A                  decb
+  C012 26 F5               bne et
+  C014 3F                  swi
+                           end
+
+  Symbol Table 
+
+  ET                 C009

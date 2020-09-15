@@ -1,0 +1,18 @@
+  ADDR B1 B2 B3 B4 D:\programation assembleur\comptage du nobre des PAGE       1
+
+                           org $c000
+  C000 C6 08               ldab #$08
+  C002 7F 07 01            clr $0701
+  C005 B6 07 00            ldaa $0700
+  C008 48          et1     lsla
+  C009 24 03               bcc et
+  C00B 7C 07 01            inc $0701
+  C00E 5A          et      decb
+  C00F 26 F7               bne et1
+  C011 3F                  swi
+                           end
+
+  Symbol Table 
+
+  ET                 C00E
+  ET1                C008

@@ -1,0 +1,46 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                           org $c000
+  C000 B6 07 00            ldaa $0700
+  C003 7F 07 01            clr $0701
+  C006 48                  lsla
+  C007 24 03               bcc et
+  C009 7C 07 01            inc $0701
+  C00C 48          et      lsla
+  C00D 24 03               bcc et1
+  C00F 7C 07 01            inc $0701
+  C012 48          et1     lsla
+  C013 24 03               bcc et2
+  C015 7C 07 01            inc $0701
+  C018 48          et2     lsla
+  C019 24 03               bcc et3
+  C01B 7C 07 01            inc $0701
+  C01E 48          et3     lsla
+  C01F 24 03               bcc et4
+  C021 7C 07 01            inc $0701
+  C024 48          et4     lsla
+  C025 24 03               bcc et5
+  C027 7C 07 01            inc $0701
+  C02A 48          et5     lsla
+  C02B 24 03               bcc et6
+  C02D 7C 07 01            inc $0701
+  C030 48          et6     lsla
+  C031 24 03               bcc et7
+  C033 7C 07 01            inc $0701
+  C036 48          et7     lsla
+  C037 24 03               bcc et8
+  C039 7C 07 01            inc $0701
+  C03C 3F          et8     swi
+                           end
+
+  Symbol Table 
+
+  ET                 C00C
+  ET1                C012
+  ET2                C018
+  ET3                C01E
+  ET4                C024
+  ET5                C02A
+  ET6                C030
+  ET7                C036
+  ET8                C03C
